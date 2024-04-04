@@ -24,4 +24,14 @@ jobs:
       name: Dev
     steps:
       - name: Deploy
-        run: echo I am deploying! 
+        run: echo I am Deploying in dev! 
+
+  DeployProd:
+    name: Deploy to Prod 
+    needs: [DeployDev]
+    runs-on: ubuntu-latest
+    environment: 
+      name: Prod
+    steps:
+      - name: Deploy
+        run: echo I am deploying in Prod! 
